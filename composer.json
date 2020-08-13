@@ -1,16 +1,18 @@
 {
   "name": "cerad/symfony",
 
+  "require": {
+    "php": "^7.4.4",
+    "symfony/routing": "^5.1",
+    "symfony/config": "^5.1",
+    "symfony/http-foundation": "^5.1"
+  },
   "autoload": {
     "psr-4": {
       "Symfony\\Component\\Routing\\": "src/Routing/"
     }
   },
 
-  "require": {
-    "symfony/routing": "^5.1",
-    "symfony/config": "^5.1"
-  },
   "minimum-stability": "dev",
   "prefer-stable": true
 }

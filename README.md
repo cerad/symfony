@@ -15,3 +15,7 @@ First attempt at creating a package for my Symfony tweaks
 ```
 
 Not sure if I need the min-stability or not
+
+Developing against 7.4 to get typed properties.
+
+7.2 does not support them.
