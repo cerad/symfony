@@ -1,3 +1,16 @@
 {
-  "name": "cerad/symfony"
+  "name": "cerad/symfony",
+
+  "autoload": {
+    "psr-4": {
+      "Symfony\\Component\\Routing\\": "src/Routing/"
+    }
+  },
+
+  "require": {
+    "symfony/routing": "^5.1",
+    "symfony/config": "^5.1"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
