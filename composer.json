@@ -15,9 +15,14 @@
   "autoload": {
     "psr-4": {
       "App\\": "src/App/",
+      "Cerad\\": "src/Cerad/",
       "Symfony\\Component\\HttpKernel\\": "src/HttpKernel/",
-      "Symfony\\Component\\Routing\\": "src/Routing/"
-    }
+      "Symfony\\Component\\Routing\\": "src/Routing/",
+      "Doctrine\\ORM\\": "src/Doctrine/ORM/"
+    },
+    "exclude-from-classmap": [
+      "/vendor/cerad/symfony/src/App/"
+    ]
   },
 
   "minimum-stability": "dev",

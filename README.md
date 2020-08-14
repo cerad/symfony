@@ -10,7 +10,15 @@ First attempt at creating a package for my Symfony tweaks
       "type": "vcs",
       "url": "https://github.com/cerad/symfony"
     }
-  ]
+  ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "exclude-from-classmap": [
+            "/vendor/cerad/symfony/src/App/"
+        ]
+    }
 }
 ```
 
@@ -28,6 +36,10 @@ copy config/services.php
 remove Controller directory
 
 copy config/routes/annotations.yaml until annotations are disabled
+     or just remove the file
+     
 copy config/routes.php
 
 copy App\Shared and App\Home
+
+After adding some additional PSR-4 paths I had to publish a new release and then update the app.
