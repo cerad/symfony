@@ -2,8 +2,10 @@
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
-//use App\Home\Index\HomeIndexAction;
-
+use App\Home\Index\HomeIndexAction;
+use Cerad\HttpKernel\Controller\ActionInterface;
+use Cerad\Template\PageTemplate;
+use Cerad\Template\PageTemplateInterface;
 use Symfony\Component\HttpKernel\Controller\ControllerServiceArgumentsInterface;
 
 return function (ContainerConfigurator $configurator) {
@@ -11,16 +13,17 @@ return function (ContainerConfigurator $configurator) {
         ->autowire()
         ->autoconfigure();
 
-    $services->instanceof(ControllerServiceArgumentsInterface::class)
+    $services->instanceof(ActionInterface::class)
         ->tag('controller.service_arguments');
 
-    // Shared
-    //$services->set(PageTemplate::class);
-    //$services->alias(PageTemplateInterface::class, PageTemplate::class);
+    // App Page Template
+    $services->set(PageTemplate::class)->call('setTitle',['Cerad']);
+    $services->alias(PageTemplateInterface::class, PageTemplate::class);
 
     // Home
-    //$services->set(HomeIndexAction::class);
+    $services->set(HomeIndexAction::class);
 
+    // Example of loading a directory
     //$services->load('App\\Home\\', '../src/Home/*')
     //    ->exclude('../src/Home/{}');
 };

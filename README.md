@@ -2,15 +2,6 @@ First attempt at creating a package for my Symfony tweaks
 
 ```json
 {
-  "require": {
-    "cerad/symfony": "dev-master"
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/cerad/symfony"
-    }
-  ],
     "autoload": {
         "psr-4": {
             "App\\": "src/"
@@ -40,6 +31,6 @@ copy config/routes/annotations.yaml until annotations are disabled
      
 copy config/routes.php
 
-copy App\Shared and App\Home
+copy App\Home
 
 After adding some additional PSR-4 paths I had to publish a new release and then update the app.
